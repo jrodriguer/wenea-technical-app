@@ -1,21 +1,14 @@
 import express from 'express';
 import firebase from 'firebase';
+import * as admin from 'firebase-admin';
 
 const app = express();
 const port = 5000;
 
-// Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyDXWEC_FNsxqHaHiqIipKjoMmf16nhaMzM",
-  authDomain: "wenea-thechnical.firebaseapp.com",
-  databaseURL: "https://wenea-thechnical-default-rtdb.firebaseio.com",
-  projectId: "wenea-thechnical",
-  storageBucket: "wenea-thechnical.appspot.com",
-  messagingSenderId: "449693082463",
-  appId: "1:449693082463:web:045a2f70101f0b601b4cea",
-  measurementId: "G-KZM6M2T4V1"
-};
-firebase.initializeApp(firebaseConfig);
+import { firebaseConfig } from './firebaseConfig';
+
+admin.initializeApp(firebaseConfig);
+const db = admin.firestore();
 
 // User registration endpoint
 app.post('/register', (req, res) => {
