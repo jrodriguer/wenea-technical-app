@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Build artifacts
+dist/
+
+# TypeScript outputs
+*.js
+*.js.map
+
+# System files
+.DS_Store
+.vscode/
+
+# Environment variables
+.env
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# Local server data
+*.sqlite
