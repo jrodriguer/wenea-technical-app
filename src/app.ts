@@ -1,18 +1,28 @@
+import dotenv from 'dotenv';
+import firebase from 'firebase-admin';
 import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
 
-import { signup, login, editUser } from './controllers/userController';
+import router from './routes/user.route';
+import { start } from './server';
 
 
-// Set up express app
-const app: Express = express();
-app.use(cors());
-app.use(bodyParser.json());
+dotenv.config();
 
-// Define the REST API endpoints
-app.post('/signup', signup);
-app.post('/login', login);
-app.put('/user/:userId', editUser);
+firebase.initializeApp({
+  credential: firebase.credential.cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY
+  }),
+  databaseURL: process.env.FIREBASE_DATABASE_URL
+});
+
+start();
+
+const app = express();
+
+app.use('/signup', router);
+app.use('/login', router);
+app.use('/user/:userId', router);
 
 export default app;
