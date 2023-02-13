@@ -1,30 +1,18 @@
 import express from 'express';
-import firebase from 'firebase';
-import * as admin from 'firebase-admin';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
-const app = express();
-const port = 5000;
+import { signup, login, editUser } from './controllers/userController';
 
-import { firebaseConfig } from './firebaseConfig';
 
-admin.initializeApp(firebaseConfig);
-const db = admin.firestore();
+// Set up express app
+const app: Express = express();
+app.use(cors());
+app.use(bodyParser.json());
 
-// User registration endpoint
-app.post('/register', (req, res) => {
-  // Add code to handle user registration
-});
+// Define the REST API endpoints
+app.post('/signup', signup);
+app.post('/login', login);
+app.put('/user/:userId', editUser);
 
-// User login endpoint
-app.post('/login', (req, res) => {
-  // Add code to handle user login
-});
-
-// User edit endpoint
-app.put('/edit', (req, res) => {
-  // Add code to handle user editing
-});
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
+export default app;
