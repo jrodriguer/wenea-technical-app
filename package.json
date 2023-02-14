@@ -27,11 +27,14 @@
     "firebase": "^9.17.1",
     "firebase-admin": "^11.5.0",
     "nodemon": "^2.0.20",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5"
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
-    "@types/cors": "^2.8.13"
+    "@types/cors": "^2.8.13",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "typescript": "^4.9.5"
   }
 }
