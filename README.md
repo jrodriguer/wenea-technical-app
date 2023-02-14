@@ -40,13 +40,6 @@ The following endpoints are available for this API:
   - 400: Bad request
   - 404: User not found
 
-### Delete User
-- Method: DELETE
-- URL: /api/users/:id
-- Response:
-  - 204: User deleted
-  - 404: User not found
-
 ## Running the Project
 - Clone the repository to your local machine
 - Run `npm install` to install dependencies
@@ -55,6 +48,7 @@ The following endpoints are available for this API:
 ## Technologies Used
 - Node.js
 - Express.js
+- TypeScript
 - Firebase Firestore
 
 ## Contributing
