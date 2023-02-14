@@ -25,8 +25,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(routes);
 
-// router(app); // <--- ensures express app is started first before defining routes
-
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
