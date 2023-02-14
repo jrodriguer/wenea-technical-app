@@ -39,41 +39,6 @@ export class UserService {
         return { id: userRef.id, ...user };
 	}
 
-	// public async updateUser(id: string, userUpdateRequest: UserUpdateRequest): Promise<void> {
-	// 	const userRef = this.db.collection('users').doc(id);
-    //     const user = await userRef.get();
-    //     if (!user.exists) {
-    //         throw new Error(`User with id ${id} does not exist`);
-    //     }
-
-    //     let updatedUser = { ...user.data() } as User;
-
-    //     if (userUpdateRequest.password) {
-    //         updatedUser = {
-    //             ...updatedUser,
-    //             password: await bcrypt.hash(userUpdateRequest.password, saltRounds)
-    //         };
-    //     }
-
-    //     if (userUpdateRequest.name) {
-    //         updatedUser = { ...updatedUser, name: userUpdateRequest.name };
-    //     }
-
-    //     if (userUpdateRequest.address.street || userUpdateRequest.address.city || userUpdateRequest.address.province || userUpdateRequest.address.zip) {
-    //         updatedUser = {
-    //             ...updatedUser,
-    //             address: {
-    //                 street: userUpdateRequest.address.street || updatedUser.address?.street,
-    //                 city: userUpdateRequest.address.city || updatedUser.address?.city,
-    //                 state: userUpdateRequest.address.province || updatedUser.address?.province,
-    //                 zip: userUpdateRequest.address.zip || updatedUser.address?.zip
-    //             }
-    //         };
-    //     }
-
-    //     await userRef.update(updatedUser);
-	// }
-
     public async updateUser(userId: string, userUpdateRequest: UserUpdateRequest): Promise<void> {
         const userRef = this.db.collection('users').doc(userId);
 
