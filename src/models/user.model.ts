@@ -1,9 +1,8 @@
 export interface User {
-  id: string;
+  id?: string;
   email: string;
   password: string;
-  firstName: string;
-  lastName: string;
+  name: string;
   address: Address;
 }
 
@@ -11,21 +10,19 @@ export interface Address {
   city: string
   province: string
   street: string
-  zipcode: string
+  zip: string
 }
 
 export interface UserCreateRequest {
   email: string;
   password: string;
-  firstName: string;
-  lastName: string;
+  name: string;
   address: Address;
 }
 
 export interface UserUpdateRequest {
   email?: string;
   password?: string;
-  firstName?: string;
-  lastName?: string;
+  name?: string;
   address?: Address;
 }
