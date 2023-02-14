@@ -1,5 +1,6 @@
 import * as firebaseAdmin from 'firebase-admin';
 import * as bcrypt from 'bcrypt';
+import {getFirestore, collection, getDoc, doc} from "firebase/firestore";
 
 import { User, Address, UserCreateRequest, UserUpdateRequest } from '../models/user.model';
 
@@ -22,13 +23,14 @@ export class UserService {
 
 	public async createUser(userCreateRequest: UserCreateRequest): Promise<User> {
 		const password = await bcrypt.hash(userCreateRequest.password, saltRounds);
-		const address: Address = {
+
+        const address: Address = {
             street: userCreateRequest.address.street,
             city: userCreateRequest.address.city,
             province: userCreateRequest.address.province,
             zip: userCreateRequest.address.zip
         };
-        const user: User = {
+        const user: UserCreateRequest = {
             email: userCreateRequest.email,
             password,
             name: userCreateRequest.name,
