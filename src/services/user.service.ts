@@ -1,6 +1,5 @@
 import * as firebaseAdmin from 'firebase-admin';
 import * as bcrypt from 'bcrypt';
-import {getFirestore, collection, getDoc, doc} from "firebase/firestore";
 
 import { User, Address, UserCreateRequest, UserUpdateRequest } from '../models/user.model';
 
