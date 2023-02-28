@@ -7,10 +7,10 @@ export interface User {
 }
 
 export interface Address {
-  city: string
-  province: string
-  street: string
-  zip: string
+  city: string;
+  province: string;
+  street: string;
+  zip: string;
 }
 
 export interface UserCreateRequest {

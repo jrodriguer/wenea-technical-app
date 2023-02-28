@@ -6,7 +6,6 @@ import express from 'express';
 
 import routes from './routes/user.route';
 
-
 dotenv.config();
 
 firebase.initializeApp({
