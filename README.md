@@ -41,7 +41,7 @@ The following endpoints are available for this API:
   - 200: User updated
   - 400: Bad request
   - 404: User not found
-s
+
 ## Database Schema
 This REST API uses Firebase Firestore as its backend database. The database contains the following collections:
 - `users` (collection): contains user records, with each record having the following fields:
